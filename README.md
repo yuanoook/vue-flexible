@@ -1,4 +1,4 @@
-# Huakang Vue-flexible Demo
+# Vue-flexible Demo
 
 ## Notice
 
