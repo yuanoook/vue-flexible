@@ -3,9 +3,10 @@
 ## Notice
 
     Replace
-        /*2rem*/, /*px*/, /*no*/
+        /*2rem*/,   /*px*/,     /*no*/
     with
-        px, dpx, rpx
+        px,         dpx,        rpx
+
     for px2rem in flexible.js
 
     More details in https://github.com/ggpp224/postcss-plugin-px2rem
