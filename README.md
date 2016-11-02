@@ -9,7 +9,7 @@
 
     for px2rem in flexible.js
 
-    More details in https://github.com/ggpp224/postcss-plugin-px2rem
+    More details in [https://github.com/ggpp224/postcss-plugin-px2rem](https://github.com/ggpp224/postcss-plugin-px2rem)
 
 ## Build Setup
 
