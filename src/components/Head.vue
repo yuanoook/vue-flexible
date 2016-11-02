@@ -30,6 +30,9 @@ export default {
       font-size: 36dpx;
       margin-top: 36rpx;
       margin-bottom: 36px;
+      @media ( max-width:450px ) {
+        font-size: 20dpx;
+      }
     }
 }
 </style>

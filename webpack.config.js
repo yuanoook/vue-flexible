@@ -44,7 +44,9 @@ module.exports = {
     new webpack.LoaderOptionsPlugin({
       vue: {
         postcss: [
-          require('postcss-plugins-px2rem')()
+          require('postcss-plugins-px2rem')({
+            mediaQuery: true
+          })
         ]
       }
     })
