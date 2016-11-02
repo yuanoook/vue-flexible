@@ -2,14 +2,9 @@
 
 ## Notice
 
-    Replace
-        /*2rem*/,   /*px*/,     /*no*/
-    with
-        px,         dpx,        rpx
+Use ```px, dpx, rpx``` instead of ```/*2rem*/, /*px*/, /*no*/``` for px2rem with flexible.js
 
-    for px2rem in flexible.js
-
-    More details in [https://github.com/ggpp224/postcss-plugin-px2rem](https://github.com/ggpp224/postcss-plugin-px2rem)
+More details in [https://github.com/ggpp224/postcss-plugin-px2rem](https://github.com/ggpp224/postcss-plugin-px2rem)
 
 ## Build Setup
 
@@ -23,5 +18,3 @@ npm run dev
 # build for production with minification
 npm run build
 ```
-
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
