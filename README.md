@@ -1,16 +1,14 @@
 # Huakang Vue-flexible Demo
 
 ## Notice
-    replace
-    `
-    /*2rem*/, /*px*/, /*no*/
-    `
+
+    Replace
+        /*2rem*/, /*px*/, /*no*/
     with
-    `
-    px, dpx, rpx
-    `
-    for px2rem
-    https://github.com/ggpp224/postcss-plugin-px2rem
+        px, dpx, rpx
+    for px2rem in flexible.js
+
+    More details in https://github.com/ggpp224/postcss-plugin-px2rem
 
 ## Build Setup
 
