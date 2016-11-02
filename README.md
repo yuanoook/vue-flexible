@@ -6,7 +6,7 @@ Use ```px, dpx, rpx``` instead of ```/*2rem*/, /*px*/, /*no*/``` for px2rem with
 
 More details in [https://github.com/ggpp224/postcss-plugin-px2rem](https://github.com/ggpp224/postcss-plugin-px2rem)
 
-About [px2rem configuration >](https://www.npmjs.com/package/postcss-plugin-px2rem#configuration)
+About [px2rem configuration](https://www.npmjs.com/package/postcss-plugin-px2rem#configuration)
 
 ## Build Setup
 
