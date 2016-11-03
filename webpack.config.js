@@ -4,10 +4,10 @@ const WebpackShellPlugin = require('webpack-shell-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  entry: './src/test_entry.js',
+  entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: './',
+    publicPath: '/',
     filename: 'build.js'
   },
   module: {
@@ -68,6 +68,7 @@ if (process.env.NODE_ENV === 'production') {
   module.exports.devtool = '#source-map'
   // http://vue-loader.vuejs.org/en/workflow/production.html
   module.exports.output = Object.assign(module.exports.output,{
+    publicPath: './',
     filename: 'build.[hash].js'
   });
 
