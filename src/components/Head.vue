@@ -18,6 +18,7 @@ export default {
 <style lang="less" scoped>
 .header {
     color: #000;
+    height: 375px;
     img {
         display: block;
         margin: auto;
@@ -31,7 +32,7 @@ export default {
       margin-top: 36rpx;
       margin-bottom: 36px;
       @media ( max-width:450px ) {
-        font-size: 24dpx;
+        font-size: 50dpx;
       }
     }
 }

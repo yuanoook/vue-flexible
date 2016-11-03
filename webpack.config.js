@@ -3,6 +3,7 @@ const webpack = require('webpack')
 const WebpackShellPlugin = require('webpack-shell-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const vue_options = {};
 
 module.exports = {
   entry: './src/main.js',
@@ -16,14 +17,7 @@ module.exports = {
       {
         test: /\.vue$/,
         loader: 'vue',
-        options: {
-          loaders: {
-            css: ExtractTextPlugin.extract({
-              loader: 'css-loader',
-              fallbackLoader: 'vue-style-loader'
-            })
-          }
-        }
+        options: vue_options
       },
       {
         test: /\.less$/,
@@ -73,6 +67,14 @@ module.exports = {
 if (process.env.NODE_ENV === 'production') {
   // module.exports.devtool = '#source-map'
   // http://vue-loader.vuejs.org/en/workflow/production.html
+
+  vue_options.loaders = Object.assign({}, vue_options.loaders, {
+    css: ExtractTextPlugin.extract({
+      loader: 'css-loader',
+      fallbackLoader: 'vue-style-loader'
+    })
+  });
+
   module.exports.output = Object.assign(module.exports.output,{
     publicPath: './',
     filename: 'build.[hash].js'
