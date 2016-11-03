@@ -1,5 +1,6 @@
-var path = require('path')
-var webpack = require('webpack')
+const path = require('path')
+const webpack = require('webpack')
+const WebpackShellPlugin = require('webpack-shell-plugin')
 
 module.exports = {
   entry: './src/main.js',
@@ -74,6 +75,10 @@ if (process.env.NODE_ENV === 'production') {
     }),
     new webpack.LoaderOptionsPlugin({
       minimize: true
+    }),
+    new WebpackShellPlugin({
+      onBuildStart:['echo "\n\n ----Webpack Build Start---- \n\n"'],
+      onBuildEnd:['npm run minindex & echo "\n\n ----Webpack Build End---- \n\n"']
     })
   ])
 }
