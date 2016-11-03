@@ -1,12 +1,13 @@
 const path = require('path')
 const webpack = require('webpack')
 const WebpackShellPlugin = require('webpack-shell-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  entry: './src/main.js',
+  entry: './src/test_entry.js',
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
+    publicPath: './',
     filename: 'build.js'
   },
   module: {
@@ -33,6 +34,10 @@ module.exports = {
         options: {
           name: '[name].[ext]?[hash]'
         }
+      },
+      {
+        test: /\.html$/,
+        loader: 'html?interpolate'
       }
     ]
   },
@@ -62,7 +67,17 @@ module.exports = {
 if (process.env.NODE_ENV === 'production') {
   module.exports.devtool = '#source-map'
   // http://vue-loader.vuejs.org/en/workflow/production.html
+  module.exports.output = Object.assign(module.exports.output,{
+    filename: 'build.[hash].js'
+  });
+
   module.exports.plugins = (module.exports.plugins || []).concat([
+    new HtmlWebpackPlugin({
+      path: './',
+      inject: true,
+      template: 'src/index.html',
+      filename: 'index.html'
+    }),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: '"production"'
@@ -77,8 +92,9 @@ if (process.env.NODE_ENV === 'production') {
       minimize: true
     }),
     new WebpackShellPlugin({
-      onBuildStart:['echo "\n\n ----Webpack Build Start---- \n\n"'],
-      onBuildEnd:['npm run minindex & echo "\n\n ----Webpack Build End---- \n\n"']
+      onBuildStart: ['echo "\n\n ----Webpack Build Start---- \n\n";rm -rf dist'],
+      onBuildEnd: ['echo "\n\n ----Webpack Build End---- \n\n"']
+      //, onBuildExit: ['npm run minindex']
     })
   ])
 }
