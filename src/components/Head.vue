@@ -17,7 +17,7 @@ export default {
 
 <style lang="less" scoped>
 .header {
-    color: red;
+    color: #000;
     img {
         display: block;
         margin: auto;

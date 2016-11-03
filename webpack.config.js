@@ -2,6 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 const WebpackShellPlugin = require('webpack-shell-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   entry: './src/main.js',
@@ -16,7 +17,12 @@ module.exports = {
         test: /\.vue$/,
         loader: 'vue',
         options: {
-          // vue-loader options go here
+          loaders: {
+            css: ExtractTextPlugin.extract({
+              loader: 'css-loader',
+              fallbackLoader: 'vue-style-loader'
+            })
+          }
         }
       },
       {
@@ -61,11 +67,11 @@ module.exports = {
     historyApiFallback: true,
     noInfo: true
   },
-  devtool: '#eval-source-map'
+  // devtool: '#eval'
 }
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports.devtool = '#source-map'
+  // module.exports.devtool = '#source-map'
   // http://vue-loader.vuejs.org/en/workflow/production.html
   module.exports.output = Object.assign(module.exports.output,{
     publicPath: './',
@@ -73,6 +79,9 @@ if (process.env.NODE_ENV === 'production') {
   });
 
   module.exports.plugins = (module.exports.plugins || []).concat([
+    new ExtractTextPlugin({
+      filename: 'style.[hash].css'
+    }),
     new HtmlWebpackPlugin({
       path: './',
       inject: true,
