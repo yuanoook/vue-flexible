@@ -24,7 +24,7 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
-      list: [...Array(20).keys()]
+      list: Array(100).join(',').split(',').map((x,i)=>i)
     }
   },
   methods: {

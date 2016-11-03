@@ -8,6 +8,21 @@ More details in [https://github.com/ggpp224/postcss-plugin-px2rem](https://githu
 
 About [px2rem configuration](https://www.npmjs.com/package/postcss-plugin-px2rem#configuration)
 
+## Pitfall
+
+Browser in wechat don't support Object.prototype.keys,
+
+....................../´¯/) 
+....................,/¯../ 
+.................../..../ 
+............./´¯/'...'/´¯¯`·¸ 
+........../'/.../..../......./¨¯\ 
+........('(...´...´.... ¯~/'...') 
+.........\.................'...../ 
+..........''...\.......... _.·´ 
+............\..............( 
+..............\.............\...
+
 ## Build Setup
 
 ``` bash
