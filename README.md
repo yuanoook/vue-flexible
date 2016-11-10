@@ -23,7 +23,7 @@ About [px2rem configuration](https://www.npmjs.com/package/postcss-plugin-px2rem
 
 ## Pitfall
 
-Browser in wechat[Android] doesn't support Object.prototype.keys
+Browser in wechat[Android] doesn't support Array.prototype.keys
 
     ....................../´¯/) 
     ....................,/¯../ 
